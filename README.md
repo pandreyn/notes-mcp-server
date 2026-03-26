@@ -50,6 +50,17 @@ Then reload VS Code and your AI assistant can manage notes for you:
 - *"List all notes tagged 'urgent'"*
 - *"Append today's progress to my 'sprint log' note"*
 
+## GitHub Copilot CLI (Agency) Integration
+
+Add to your global Agency config at `~/.agency/agency.toml`:
+
+```toml
+[mcps.servers.notes]
+command = "python /path/to/server.py --notes-dir /path/to/your/notes"
+```
+
+Then restart the CLI session. Tools will be available as `notes-create_note`, `notes-read_note`, `notes-search_notes`, etc.
+
 ## How Notes Are Stored
 
 Each note is a markdown file named by slugifying the title:
